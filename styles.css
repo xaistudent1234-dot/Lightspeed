@@ -1,0 +1,422 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Aspekta', system-ui, Arial, sans-serif;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+
+.section_title {
+  margin-top: 8vh;
+}
+
+/* Background Video */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Lower than canvas */
+  background: transparent !important;
+  border: none !important;
+  display: block;
+}
+
+/* Neon Cursor Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1; /* Above video, below content */
+  background: transparent !important;
+  border: none !important;
+  display: block;
+}
+
+/* Main content z-index */
+header,
+.section1,
+.glass-navbar,
+.progress-container,
+.pfp-generator,
+.track-card,
+.pfp-output,
+.meme-output,
+.file-input {
+  position: relative;
+  z-index: 2;
+  background: none;
+}
+
+/* Glass Navbar */
+.glass-navbar {
+  position: relative;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  max-width: 1000px;
+  padding: 1.2rem 2rem;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  margin-top: 2vh;
+}
+
+.glass-navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.glass-navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.glass-navbar a:hover {
+  color: #00ffff;
+}
+
+.glass-navbar .nav-center {
+  flex: 1;
+  text-align: center;
+}
+
+.glass-navbar .speed {
+  font-style: italic;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 15px #fff,
+    0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons */
+.btn-buy,
+.music-button {
+  background: linear-gradient(135deg, #00f0ff, #00ff95);
+  color: black !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-buy:hover,
+.music-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.9);
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  margin-top: 7vh;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Headings & Paragraphs */
+h1 {
+  margin: 0;
+  padding: 1.2rem;
+  line-height: 1.2;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 10vw;
+  color: white;
+  letter-spacing: -0.06em;
+  text-shadow:
+    0 0 5px #fffc,
+    0 0 10px #fff9,
+    0 0 15px #fff6,
+    0 0 20px #ffffff4d,
+    0 0 30px #fff3;
+}
+
+.section1 h1 {
+  z-index: 10
+}
+
+
+h2 {
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.3;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 2vw;
+  color: white;
+  letter-spacing: -0.06em;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+}
+
+p {
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.5;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1vw;
+  letter-spacing: -0.06em;
+  color: white;
+  text-shadow:
+    0 0 5px #fffc,
+    0 0 10px #fff9,
+    0 0 15px #fff6,
+    0 0 20px #ffffff4d,
+    0 0 30px #fff3;
+}
+
+/* Progress Bars */
+.progress-container {
+  max-width: 700px;
+  margin: 6vh auto 0 auto;
+  text-align: center;
+  font-family: 'Aspekta', system-ui, sans-serif;
+  color: white;
+}
+
+.progress-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #0ff,
+    0 0 30px #0ff;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00f0ff, #00ff95);
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00ff95;
+  transition: width 1s ease-in-out;
+}
+
+.progress-fill.full {
+  width: 100%;
+}
+
+/* Media Elements */
+audio,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* PFP Generator Section */
+.pfp-generator {
+  background-color: black;
+}
+
+.pfp-output,
+.meme-output,
+.file-input {
+  text-align: center;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+}
+
+/* Track Card */
+.track-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  min-height: 100px;
+  background: none;
+}
+
+.track-links img {
+  width: clamp(40px, 10vw, 60px);
+  border-radius: 7px;
+  border: solid beige;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  background: none;
+}
+
+.track-links img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #fff);
+}
+
+/* Responsive: Mobile & Tablet */
+@media (max-width: 700px) {
+  .glass-navbar {
+    flex-direction: column;
+    width: 70vw;
+    padding: 0.8rem 0.5rem;
+    top: 1vh;
+    border-radius: 12px;
+    max-width: 98vw;
+  }
+
+  .glass-navbar ul {
+    gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .glass-navbar .nav-center {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    padding: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .progress-container {
+    max-width: 98vw;
+    margin: 3vh auto 0 auto;
+    padding: 0 0.3rem;
+  }
+
+  .track-card {
+    flex-direction: column;
+    min-height: 60px;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    max-width: 99vw;
+  }
+
+  .track-links img {
+    width: 40px;
+    padding: 6px;
+  }
+
+  .pfp-output,
+  .meme-output,
+  .file-input {
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+  }
+
+}
+
+/* Desktop spacing for section1 */
+.section1 {
+  margin-top: 2vh;
+}
+
+/* Utility: parent container for full viewport */
+.parent-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.glass-navbar,
+.fade-in,
+.section1,
+.progress-container {
+  position: relative;
+  z-index: 10;
+}
+
+.pfp-generator {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 400px; /* Minimum height to prevent collapse if iframe content is small */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent; /* Matches your glassmorphic aesthetic */
+  z-index: 2; /* From your original CSS, ensures layering */
+}
+
+iframe {
+  width: 100%;
+  height: 100vh; /* Use viewport height for responsiveness, adjust as needed */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  background: transparent;
+  margin: 0; /* Remove margin to fit snugly */
+  display: block;
+  z-index: 100;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 700px) {
+  .pfp-generator {
+    padding: 0.8rem;
+    min-height: 300px;
+  }
+  iframe {
+    height: 60vh; /* Smaller height for mobile */
+    min-height: 300px;
+    max-width: 98vw; /* Matches your responsive .glass-navbar */
+  }
+}
