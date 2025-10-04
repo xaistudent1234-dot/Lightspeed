@@ -25,12 +25,10 @@ document.addEventListener('mousemove', (e) => {
 function drawLightning(points) {
   if (points.length < 2) return;
   ctx.save();
-  ctx.shadowBlur = 25;
-  //ctx.shadowColor = '#00f0ff';
-  //ctx.strokeStyle = '#00f0ff';
-  ctx.shadowColor = '#fffb00ff';
-  ctx.strokeStyle = '#fffb00ff';
-  ctx.lineWidth = 4;
+  ctx.shadowBlur = 30;
+  ctx.shadowColor = '#ffff00';
+  ctx.strokeStyle = '#00f0ff';
+  ctx.lineWidth = 8;
 
   ctx.beginPath();
   ctx.moveTo(points[0].x, points[0].y);
