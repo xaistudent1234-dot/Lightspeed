@@ -115,7 +115,7 @@ header,
 }
 
 /* Buttons */
-.btn-buy,
+
 .music-button {
   background: linear-gradient(135deg, #00f0ff, #00ff95);
   color: black !important;
@@ -128,11 +128,28 @@ header,
   cursor: pointer;
 }
 
-.btn-buy:hover,
 .music-button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 255, 200, 0.9);
 }
+
+.tg-button {
+  background: linear-gradient(135deg, #00f0ff, #00ff95);
+  color: black !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.tg-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.9);
+}
+
 
 /* Fade In Animation */
 .fade-in {
