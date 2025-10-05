@@ -150,6 +150,10 @@ header,
   box-shadow: 0 0 20px rgba(0, 255, 200, 0.9);
 }
 
+.website {
+  min-height: 100vh;
+}
+
 
 /* Fade In Animation */
 .fade-in {
@@ -284,6 +288,10 @@ video {
   text-align: center;
   margin: 1.2rem 0;
   padding: 1.2rem;
+}
+
+.spacer {
+  height: 50vh; /* Adjust height as needed */
 }
 
 /* Track Card */
