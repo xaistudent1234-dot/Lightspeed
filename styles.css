@@ -154,7 +154,7 @@ header,
 /* Fade In Animation */
 .fade-in {
   opacity: 0;
-  animation: fadeIn 2s ease-in forwards;
+  animation: fadeIn 6s ease-in forwards;
   margin-top: 7vh;
   z-index: 10;
   position: relative;
